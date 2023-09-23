@@ -31,6 +31,6 @@ class WorkExperiencesController < ApplicationController
   private
   
   def work_experience_params
-    params.permit(:title, :workplace)
+    params.permit(:title, :workplace, :start, :end, :technologies_used)
   end
 end
