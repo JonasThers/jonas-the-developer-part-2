@@ -1,4 +1,5 @@
 class DegreesController < ApplicationController
+  skip_before_action :verify_authenticity_token
 
   def index
     degrees = Degree.all
@@ -29,7 +30,7 @@ class DegreesController < ApplicationController
     Degree.find(params[:id]).destroy
     head :no_content
   end
-  
+    
   private
   
   def degree_params
