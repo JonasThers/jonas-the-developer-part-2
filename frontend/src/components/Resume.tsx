@@ -3,6 +3,7 @@ import { Experience } from "./Experience";
 
 export interface EducationData {
   data: {
+    id: number;
     title: string;
     university: string;
     elective: string;
@@ -13,6 +14,7 @@ export interface EducationData {
 
 export interface WorkData {
   data: {
+    id: number;
     title: string;
     workplace: string;
     technologies_used: string;
@@ -72,9 +74,38 @@ export const Resume: React.FC = () => {
 
   return (
     <section>
-      {loadingWork ? "loading" : JSON.stringify(workExperience)}
-      <br />
-      {loadingEducation ? "loading" : JSON.stringify(education)}
+      <div>
+        <h2>Education</h2>
+        {loadingEducation
+          ? "Loading"
+          : education.map((education) => {
+              return (
+                <div key={education.id}>
+                  <h4>{education.title}</h4>
+                  <p>- From {education.university}</p>
+                  <p>- Electives: {education.elective}</p>
+                </div>
+              );
+            })}
+      </div>
+      
+      <div>
+        <h2>Work Experience</h2>
+        {loadingWork
+          ? "Loading"
+          : workExperience.map((work) => {
+              return (
+                <div key={work.id}>
+                  <h4>{work.title}</h4>
+                  <p>- At {work.workplace}</p>
+                  <p>
+                    - {work.start} - {work.end}
+                  </p>
+                  <p>- Technologies used: {work.technologies_used}</p>
+                </div>
+              );
+            })}
+      </div>
     </section>
   );
 };
