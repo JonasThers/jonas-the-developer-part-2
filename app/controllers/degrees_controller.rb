@@ -33,6 +33,6 @@ class DegreesController < ApplicationController
   private
   
   def degree_params
-    params.permit(:title, :university)
+    params.permit(:title, :university, :elective, :start, :end)
   end
 end
