@@ -1,0 +1,48 @@
+.resume {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4rem;
+}
+
+.resume-container {
+    border: 2px solid #fff;
+    border-radius: 5px;
+    padding: 2em 2em 1.5em 2em;
+    margin-bottom: 2rem;
+    line-height: 1.7rem;
+}
+
+.resume-container__title {
+    text-align: center;
+}
+
+.resume-container__block {
+    margin-bottom: 2.5em;
+}
+
+.resume-container__block h4 {
+    font-size: 20px;
+    margin-bottom: 1rem;
+}
+
+.resume-container__block p {
+    font-size: 14px;
+    padding-left: 0.75rem;
+    margin: 0;
+}
+
+@media screen and (min-width: 992px) {
+    .resume {
+        flex-direction: row;
+        gap: 2rem;
+        align-items: start;
+    }
+    
+    .resume-container {
+        width: 50%;
+    }
+
+    .resume-container__block p {
+        padding-left: 2rem;
+    }
+  }

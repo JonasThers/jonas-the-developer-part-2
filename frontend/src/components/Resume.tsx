@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import "./Resume.css";
 
 export interface EducationData {
   data: {
@@ -72,14 +73,14 @@ export const Resume: React.FC = () => {
   }, []);
 
   return (
-    <section>
-      <div>
-        <h2>Education</h2>
+    <section className="resume">
+      <div className="resume-container">
+        <h2 className="resume-container__title">Education:</h2>
         {loadingEducation
           ? "Loading"
           : education.map((education) => {
               return (
-                <div key={education.id}>
+                <div key={education.id} className="resume-container__block">
                   <h4>{education.title}</h4>
                   <p>- From {education.university}</p>
                   <p>- Electives: {education.elective}</p>
@@ -88,13 +89,13 @@ export const Resume: React.FC = () => {
             })}
       </div>
       
-      <div>
-        <h2>Work Experience</h2>
+      <div className="resume-container">
+        <h2 className="resume-container__title">Work Experience:</h2>
         {loadingWork
           ? "Loading"
           : workExperience.map((work) => {
               return (
-                <div key={work.id}>
+                <div key={work.id} className="resume-container__block">
                   <h4>{work.title}</h4>
                   <p>- At {work.workplace}</p>
                   <p>
