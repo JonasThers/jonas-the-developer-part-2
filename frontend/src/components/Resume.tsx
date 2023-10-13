@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Experience } from "./Experience";
 
 export interface EducationData {
   data: {
