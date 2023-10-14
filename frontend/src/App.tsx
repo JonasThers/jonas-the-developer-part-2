@@ -6,17 +6,13 @@ import "./App.css";
 function App() {
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
-  useEffect(() => { 
-    setTimeout(() => { 
-      setIsLoading(false); 
-    }, 1000); 
-}, []);
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+  }, []);
 
-  return (
-    <>
-      {isLoading ? <Loading /> : <Main />}
-    </>
-  )
+  return <>{isLoading ? <Loading /> : <Main />}</>;
 }
 
-export default App
+export default App;

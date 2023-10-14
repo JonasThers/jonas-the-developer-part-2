@@ -73,7 +73,7 @@ export const Resume: React.FC = () => {
   }, []);
 
   return (
-    <section className="resume">
+    <section className="resume" id="resume">
       <div className="resume-container">
         <h2 className="resume-container__title">Education:</h2>
         {loadingEducation
